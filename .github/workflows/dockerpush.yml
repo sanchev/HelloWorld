@@ -17,19 +17,21 @@ jobs:
       VERSION: 'latest'
     steps:
       - uses: actions/checkout@v2 
-      - name: Restore target directory from cache
-        uses: actions/cache@v2
-        with:
-          path: ./target
-          key: ${{ runner.os }}-target-${{ hashFiles('**/target/*.jar') }}
-          restore-keys: |
-            ${{ runner.os }}-target-
-      - name: Login to Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      #- name: Restore target directory from cache
+       # uses: actions/cache@v2
+        #with:
+         # path: ./target
+          #key: ${{ runner.os }}-target-${{ hashFiles('**/target/*.jar') }}
+          #restore-keys: |
+           # ${{ runner.os }}-target-
+      #- name: Login to Docker Hub
+      #  run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Container image
         run: |
           VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo $VERSION
-          docker build -t ${{ secrets.DOCKER_REPO }}:{$VERSION} .
-      - name: Publish Docker image
-        run: docker push ${{ secrets.DOCKER_REPO }}
+          NAME = ${{ secrets.DOCKER_REPO }}:$VERSION
+          echo $NAME
+          #docker build -t $NAME .
+      #- name: Publish Docker image
+       # run: docker push ${{ secrets.DOCKER_REPO }}
