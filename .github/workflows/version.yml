@@ -1,0 +1,19 @@
+name: Version
+
+on:
+  # Ручной запуск
+  workflow_dispatch:
+
+jobs:   
+  version:
+    name: Get version
+    runs-on: ubuntu-latest
+    needs: [build_and_test]
+    env:
+      VERSION: 'latest'
+    steps:
+      - uses: actions/checkout@v2 
+      - name: Get version
+        run: |
+          $VERSION=$( mvn help:evaluate -Dexpression=project.version -q -DforceStdout )
+          echo "::set-output name=version::$VERSION"
