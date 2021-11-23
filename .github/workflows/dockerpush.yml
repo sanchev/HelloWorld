@@ -6,7 +6,6 @@ on:
 
 jobs:
   build_and_test:
-    name: Build and test project with Maven
     uses: sanchev/HelloWorld/.github/workflows/maven.yml@main
         
   build-docker-image:
