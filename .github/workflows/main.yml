@@ -24,7 +24,7 @@ jobs:
       - name: Cache the target directory to build docker image
         uses: actions/cache@v2
         with:
-          path: /target
+          path: ./target
           key: ${{ runner.os }}-target-${{ hashFiles('**/target/*.jar') }}
           restore-keys: |
             ${{ runner.os }}-target-
@@ -53,7 +53,7 @@ jobs:
       - name: Cache the target directory to build docker image
         uses: actions/cache@v2
         with:
-          path: /target
+          path: ./target
           key: ${{ runner.os }}-target-${{ hashFiles('**/target/*.jar') }}
           restore-keys: |
             ${{ runner.os }}-target-
