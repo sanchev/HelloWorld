@@ -3,6 +3,8 @@ name: Build_and_Test_with_Maven
 on:
   # Ручной запуск
   workflow_dispatch:
+  #Запуск из других скриптов
+  workflow_call:
 
 jobs:
   build_and_test:
