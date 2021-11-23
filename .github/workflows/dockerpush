@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
       - uses: actions/checkout@v2
-      - name: Build and Test with Maven
-        uses: maven
         
   build-docker-image:
     name: Publish to Docker Hub
