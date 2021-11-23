@@ -1,4 +1,4 @@
-name: CI
+name: Build_and_Test_with_Maven
 
 on:
   # Ручной запуск
