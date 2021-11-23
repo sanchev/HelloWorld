@@ -6,6 +6,7 @@ on:
 
 jobs:
   build_and_test:
+    name: Build and Test
     uses: sanchev/HelloWorld/.github/workflows/maven.yml@a5c82f67df77f7c13c26a5f4d72ee3a163064a79
         
   build-docker-image:
