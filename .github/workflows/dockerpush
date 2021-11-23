@@ -1,4 +1,4 @@
-name: CI
+name: Publish_to_Docker_Hub
 
 on:
   # Ручной запуск
