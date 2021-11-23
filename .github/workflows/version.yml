@@ -15,8 +15,6 @@ jobs:
     steps:  
       - uses: actions/checkout@v2
       - name: Get version
-        run: |
-          echo $VERSION
-          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        run: VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
       - name: Print version
         run: echo $VERSION
