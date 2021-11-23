@@ -5,14 +5,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_and_test:
-    name: Maven
-    uses: sanchev/HelloWorld/.github/workflows/maven.yml@a5c82f67df77f7c13c26a5f4d72ee3a163064a79
+  #build_and_test:
+   # name: Maven
+    #uses: sanchev/HelloWorld/.github/workflows/maven.yml@a5c82f67df77f7c13c26a5f4d72ee3a163064a79
         
   build-docker-image:
     name: Publish to Docker Hub
     runs-on: ubuntu-latest
-    needs: [build_and_test]
+    #needs: [build_and_test]
     env:
       VERSION: 'latest'
     steps:
