@@ -15,4 +15,4 @@ jobs:
       - name: Get version
         run: |
           $VERSION=$( mvn help:evaluate -Dexpression=project.version -q -DforceStdout )
-          echo "::set-output name=version::$VERSION"
+          echo "Version:$VERSION"
