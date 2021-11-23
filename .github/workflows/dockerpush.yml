@@ -30,7 +30,7 @@ jobs:
         run: |
           VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo $VERSION
-          NAME = ${{ secrets.DOCKER_REPO }}:$VERSION
+          NAME = ${{ secrets.DOCKER_REPO }}
           echo $NAME
           #docker build -t $NAME .
       #- name: Publish Docker image
