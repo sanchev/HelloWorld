@@ -13,4 +13,5 @@ jobs:
     steps:  
       - uses: actions/checkout@v2
       - name: Get version
-        run: mvn help:evaluate -Dexpression=project.version -q -DforceStdout
+        run: |
+          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
