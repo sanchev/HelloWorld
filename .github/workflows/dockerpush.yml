@@ -30,16 +30,11 @@ jobs:
       - name: Get version 
         run: |
           echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
-      
-      - name: Print version 
-        run: echo $VERSION
         
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      
       - name: Build Container image
-        run: |
-          echo ${{ secrets.DOCKER_REPO }}
-          echo $VERSION
-          #docker build -t ${{secrets.DOCKER_REPO }}:$VERSION .
+        run: docker build -t ${{secrets.DOCKER_REPO }}:$VERSION .
       #- name: Publish Docker image
       #  run: docker push ${{ secrets.DOCKER_REPO }}
