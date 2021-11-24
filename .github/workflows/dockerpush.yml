@@ -1,6 +1,8 @@
 name: Publish_to_Docker_Hub
 
 on:
+  push:
+    branches: [master]
   # Ручной запуск
   workflow_dispatch:
 
