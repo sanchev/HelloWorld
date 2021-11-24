@@ -28,8 +28,7 @@ jobs:
       - name: Get version 
         run: |
           echo $VERS
-          echo "VERS=100" >> $GITHUB_ENV
-          echo $VERS
+          echo "VERS=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
       - name: Print version 
         run: echo $VERS
       #- name: Login to Docker Hub
