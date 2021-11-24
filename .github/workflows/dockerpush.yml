@@ -29,7 +29,6 @@ jobs:
           echo ${{ secrets.DOCKER_REPO }}
           VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo $VERSION
-          #echo ${{secrets.DOCKER_REPO }} | sed 's/./& /g'
           docker build -t ${{secrets.DOCKER_REPO }}:$VERSION .
-      #- name: Publish Docker image
-       # run: docker push ${{ secrets.DOCKER_REPO }}
+      - name: Publish Docker image
+        run: docker push ${{ secrets.DOCKER_REPO }}
