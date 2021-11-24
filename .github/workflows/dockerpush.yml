@@ -27,7 +27,7 @@ jobs:
       - name: Get version 
         run: |
           echo $VERS
-          VERS=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          echo "::set-env name=VERS:$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)"
           echo $VERS
       - name: Print version 
         run: echo $VERS
