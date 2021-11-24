@@ -1,6 +1,5 @@
 # Hello World
 
-Status of Last Deployment:<br>
 <img src="https://github.com/sanchev/HelloWorld/workflows/Publish_to_Docker_Hub/badge.svg?branch=master"><br>
 
 Hello World SpringBoot Application
