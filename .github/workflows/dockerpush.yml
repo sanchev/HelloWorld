@@ -22,14 +22,14 @@ jobs:
           #key: ${{ runner.os }}-target-${{ hashFiles('**/target/*.jar') }}
           #restore-keys: |
            # ${{ runner.os }}-target-
-      #- name: Login to Docker Hub
-      #  run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Container image
         run: |
+          echo ${{ secrets.DOCKER_REPO }}
           VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo $VERSION
-          echo ${{ secrets.DOCKER_REPO }}
           #echo ${{secrets.DOCKER_REPO }} | sed 's/./& /g'
-          #docker build -t $NAME .
+          #docker build -t ${{secrets.DOCKER_REPO }}:$VERSION .
       #- name: Publish Docker image
        # run: docker push ${{ secrets.DOCKER_REPO }}
