@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     #needs: [build_and_test]
     env:
-      VERS: 'latetst'
+      VERS: 'latest'
     steps:
       - uses: actions/checkout@v2 
       - name: Restore target directory from cache
