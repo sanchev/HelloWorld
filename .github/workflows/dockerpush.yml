@@ -5,10 +5,9 @@ on:
   workflow_dispatch:
 
 jobs:
- # build_and_test:
-   # name: Maven
-    #uses: sanchev/HelloWorld/.github/workflows/maven.yml@a5c82f67df77f7c13c26a5f4d72ee3a163064a79
-   # uses: ./.github/actions//maven
+  build_and_test:
+    name: Maven
+    uses: sanchev/HelloWorld/.github/workflows/maven.yml@a5c82f67df77f7c13c26a5f4d72ee3a163064a79
         
   build-docker-image:
     name: Publish to Docker Hub
@@ -18,7 +17,6 @@ jobs:
       VERSION: 'latest'
     steps:
       - uses: actions/checkout@v2 
-      - uses: ./.github/actions//maven
       
       - name: Restore target directory from cache
         uses: actions/cache@v2
