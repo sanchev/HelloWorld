@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  #build_and_test:
-   # name: Maven
+  build_and_test:
+    name: Maven
     #uses: sanchev/HelloWorld/.github/workflows/maven.yml@a5c82f67df77f7c13c26a5f4d72ee3a163064a79
-    #uses:  ./.github/actions/maven
+    uses:  ./.github/actions/maven
         
   build-docker-image:
     name: Publish to Docker Hub
@@ -36,5 +36,6 @@ jobs:
       
       - name: Build Container image
         run: docker build -t ${{secrets.DOCKER_REPO }}:$VERSION .
+        
       - name: Publish Docker image
         run: docker push ${{ secrets.DOCKER_REPO }}:$VERSION
