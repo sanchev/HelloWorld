@@ -8,7 +8,7 @@ jobs:
   build_and_test:
     name: Maven
     #uses: sanchev/HelloWorld/.github/workflows/maven.yml@a5c82f67df77f7c13c26a5f4d72ee3a163064a79
-    uses:  ./.github/actions/maven
+    uses:  ./.github/workflows/maven
         
   build-docker-image:
     name: Publish to Docker Hub
