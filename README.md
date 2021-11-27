@@ -19,6 +19,7 @@ $ bash start.sh ${message_text}
 
 That's all.
 
+<!--
 # Local development
 For local development and testing, use `docker-compose-test.yml`. 
 Run command: 
@@ -38,6 +39,7 @@ Add VM Options:
 ```
 
  With these configurations - run SpringBoot main method.
+ -->
 
 # Technological stack
 - SpringBoot as a skeleton framework
